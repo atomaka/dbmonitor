@@ -1,0 +1,10 @@
+application_config = {
+  port: 5120
+  updateTime: 10
+  table: 'print_jobs'
+  columns: ['print_host','user_print', '(pages_end - pages_start) AS pages', 'queue_name']
+  timestamp_column: 'rec_time'
+  where: "queue_name IN('wellsaop1','wellsaop2')"
+}
+
+module.exports = application_config

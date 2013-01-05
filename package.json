@@ -1,0 +1,11 @@
+{
+  "name": "dbmonitor",
+  "description": "Use your web browser to monitor table inserts",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "mysql-native": "0.4.x",
+    "socket.io": "0.9.x",
+    "moment": "1.7.x"
+  }
+}
