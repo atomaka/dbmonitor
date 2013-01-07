@@ -16,7 +16,7 @@ checkDate = moment().add('minutes', -5)
 getDatabaseUpdates = () ->
   query = "SELECT " + application.timestamp_column + "," + application.columns.join(',') + " FROM " + application.table + " WHERE " + application.where + " AND " + application.timestamp_column + " >  '" + checkDate.format('YYYY-MM-DD HH:mm:ss') + "'"
   db.query(query).addListener 'row', (job) ->
-    jobDate = moment(job.rec_time, 'YYYY-MM-DD HH:mm:ss')
+    jobDate = moment(job[application.timestamp_column], 'YYYY-MM-DD HH:mm:ss')
     checkDate = jobDate if jobDate > checkDate
     updateClient job
 
