@@ -11,7 +11,6 @@ column.
 
 * nodejs
 * npm
-* Static web server
 
 ##Install
 
@@ -24,17 +23,20 @@ $ cp config/database.coffee.sample database.coffee
 ```
 
 * Edit settings in application.coffee and database.coffee as necessary
-* Setup your web server to serve the public directory
 
 ##Usage
 
-Go to URL setup in your static web server!
+```
+$ coffee dbmonitor.coffee
+```
+
+Access the application in your browser using the port you have configured.
 
 ##License
 
 The MIT License
 
-Copyright (c) 2012 Andrew Tomaka
+Copyright (c) 2013 Andrew Tomaka
 
 Permission is hereby granted, free of charge, to any person obtaining a copy 
 of this software and associated documentation files (the "Software"), to deal 
