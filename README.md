@@ -27,6 +27,12 @@ $ cp config/database.coffee.sample database.coffee
 ##Usage
 
 ```
+$ ./node_modules/coffee-script/bin/coffee dbmonitor.coffee
+```
+
+or with global coffee-script install:
+
+```
 $ coffee dbmonitor.coffee
 ```
 

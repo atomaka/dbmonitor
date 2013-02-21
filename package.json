@@ -6,6 +6,7 @@
   "dependencies": {
     "mysql-native": "0.4.x",
     "socket.io": "0.9.x",
-    "moment": "1.7.x"
+    "moment": "1.7.x",
+    "coffee-script": "1.3.x"
   }
 }
