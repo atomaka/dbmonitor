@@ -10,7 +10,10 @@ db = require('mysql-native').createTCPClient(database.host, database.port)
 db.auth database.database, database.username, database.password
 db.auto_prepare = true
 
-checkDate = moment().add('minutes', -5)
+checkDate = moment('0000-01-01 00:00:00', 'YYYY-MM-DD HH:mm:ss')
+query = "SELECT " + application.timestamp_column + " FROM `print_jobs` ORDER BY " + application.timestamp_column + " DESC LIMIT 1"
+db.query(query).addListener 'row', (start) ->
+  checkDate = moment(start[application.timestamp_column], 'YYYY-MM-DD HH:mm:ss')
 
 getDatabaseUpdates = () ->
   query = "SELECT " + application.timestamp_column + "," + application.columns.join(',') + " FROM " + application.table + " WHERE " + application.where + " AND " + application.timestamp_column + " >  '" + checkDate.format('YYYY-MM-DD HH:mm:ss') + "'"
